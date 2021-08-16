@@ -1,0 +1,32 @@
+﻿@model LibraryProjectMvc.Models.Entity.Actions
+@{
+    ViewBag.Title = "ToLend";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top: 15px">
+        <label>Üye ID</label>
+        @Html.TextBoxFor(t => t.UserId, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap ID</label>
+        @Html.DropDownListFor(t => t.BookId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Personel ID</label>
+        @Html.TextBoxFor(t => t.EmployeeId, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap Alış Tarihi</label>
+        <input type="text" class="form-control" name="ReceiveDate" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap İade Tarihi</label>
+        <input type="text" class="form-control" name="ReturnDate" value="@DateTime.Now.AddDays(7).ToShortDateString()" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" style="background-color:brown;color:white">Kitabı Ödünç Ver</button>
+    </div>
+</form>
+

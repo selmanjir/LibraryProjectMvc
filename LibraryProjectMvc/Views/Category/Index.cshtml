@@ -1,0 +1,30 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Categories>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color:white">Kategoriler</h2>
+<body style="background-color:#4f4e4e">
+</body>
+<table class="table table-bordered">
+    <tr>
+        <th style="color:white">ID</th>
+        <th style="color:white">ADI</th>
+        <th style="color:white">SİL</th>
+        <th style="color:white">GÜNCELLE</th>
+    </tr>
+    @foreach (var categories in Model)
+    {
+        <tr>
+            <td style="color:antiquewhite">@categories.CategoryId</td>
+            <td style="color: antiquewhite">@categories.CategoryName</td>
+            <td style="color: antiquewhite">@Html.ActionLink("Sil", "DeleteCategory", new { id = categories.CategoryId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz ? ')" }) </td>
+            <td style="color:antiquewhite"><a href="/Category/GetCategory/@categories.CategoryId" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Ekle</a>

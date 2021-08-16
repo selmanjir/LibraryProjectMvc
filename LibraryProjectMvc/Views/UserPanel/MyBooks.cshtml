@@ -1,0 +1,36 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Actions>
+@{
+    ViewBag.Title = "MyBooks";
+    Layout = "~/Views/Shared/_LayoutUserPanel.cshtml";
+}
+<body style="background-image:url(/web2/resimler/user.jpg);background-repeat:no-repeat;">
+</body>
+<br />
+<h2 style="color:white">Kitap Geçmişim</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th style="color:white">Kitap Adı</th>
+        <th style="color:white">Alış Tarihi</th>
+        <th style="color:white">Üye İade Tarihi</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td style="color:white">@a.Books.BookName</td>
+            <td style="color:white">@Convert.ToDateTime(a.ReceiveDate).ToString("dd/MM/yyyy")</td>
+            <td style="color:white">
+                @if (a.ActionStatus == false)
+                {
+                <p>Teslim edilmedi</p>
+                }
+                else
+                {
+                    @Convert.ToDateTime(a.UserReturnDate).ToString("dd/MM/yyyy")
+                }
+            </td>
+
+        </tr>
+    }
+</table>

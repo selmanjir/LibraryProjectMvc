@@ -1,0 +1,37 @@
+﻿@model LibraryProjectMvc.Models.Entity.Authors
+@{
+    ViewBag.Title = "GetAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<body style="background-image:url(/web2/resimler/yazar1_1500x800.jpg);background-repeat:no-repeat">
+</body>
+
+@using (Html.BeginForm("UpdateAuthor", "Author", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yazar ID &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(a => a.AuthorId, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yazar ADI &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(a => a.AuthorFirstName, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yazar SOYADI &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(a => a.AuthorLastName, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yazar DETAY &nbsp;</label>
+            <br />
+            @Html.TextAreaFor(a => a.Detail, new { @class = "form-inline" })
+        </div>
+        <button class="btn btn-primary">Yazar Bilgilerini Güncelle</button>
+    </div>
+
+}
+

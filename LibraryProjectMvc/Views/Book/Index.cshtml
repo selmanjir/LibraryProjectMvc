@@ -1,0 +1,72 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Books>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color:white">Kitap Sayfası</h2>
+<body style="background-color:#4f4e4e">
+</body>
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:15px;margin-top:15px;">
+        <b style="color:white">Aranacak Kitap Adını Girin :</b> @Html.TextBox("s")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th style="color:white">ID</th>
+        <th style="color:white">Kitap Adı</th>
+        <th style="color:white">Kitap Yazarı</th>
+        <th style="color:white">Kategorisi</th>
+        <th style="color:white">Basım Yılı</th>
+        <th style="color:white">Yayınevi</th>
+        <th style="color:white">Sayfa</th>
+        <th style="color:white">Durum</th>
+        <th style="color:white">Sil</th>
+        <th style="color:white">Güncelle</th>
+        <th style="color:white">Revize İşlemi</th>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td style="color:navajowhite">@b.BookId</td>
+            <td style="color:antiquewhite">@b.BookName</td>
+            <td style="color:antiquewhite">@b.Authors.AuthorFirstName &nbsp @b.Authors.AuthorLastName</td>
+            <td style="color:antiquewhite">@b.Categories.CategoryName</td>
+            <td style="color:antiquewhite">@b.YearOfPublication</td>
+            <td style="color:antiquewhite">@b.Publisher</td>
+            <td style="color:antiquewhite">@b.Page</td>
+            <td style="color:antiquewhite">@b.BookStatus</td>
+            <td style="color:antiquewhite">@Html.ActionLink("Sil", "DeleteBook", new { id = b.BookId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz ? ')" })</td>
+            <td style="color:antiquewhite"><a href="/Book/GetBook/@b.BookId" class="btn btn-success">Güncelle</a></td>
+            @if (b.BookStatus == false)
+            {
+                if (b.RevisedStatus == true)
+                {
+                    <td style="color:white"><a href="/Book/ReviseRemove/@b.BookId" class="btn btn-danger">Revize Kaldır</a></td>
+                }
+                else
+                {
+                    <td style="color:antiquewhite">Kitap Üyede</td>
+                }
+
+            }
+
+            else
+            {
+                <td style="color:white"><a href="/Book/ToRevise/@b.BookId" class="btn btn-success">Revize Et</a></td>
+            }
+
+
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Book/AddBook" class="btn btn-primary">Yeni Kitap Ekle</a>

@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 210px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+
+            .sidebar a {
+                padding: 10px 14px 10px 10px;
+                text-decoration: none;
+                font-size: 18px;
+                color: burlywood;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    color: #f1f1f1;
+                }
+
+        .main {
+            margin-left: 220px;
+            padding: 0px 10px;
+        }
+
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="/Statistics/Index/"><i class="glyphicon glyphicon-home"></i> &nbsp; Ana Sayfa </a>
+        <a href="/Category/Index/"><i class="glyphicon glyphicon-link"></i> &nbsp; Kategoriler </a>
+        <a href="/Book/Index/"><i class="glyphicon glyphicon-book"></i> &nbsp; Kitaplar </a>
+        <a href="/Author/Index/"><i class="glyphicon glyphicon-pencil"></i> &nbsp; Yazarlar </a>
+        @if (User.IsInRole("A"))
+        {
+            <a href="/User/Index/"><i class="glyphicon glyphicon-user"></i> &nbsp; Kullanıcılar </a>
+        }
+        @if (User.IsInRole("A"))
+        {
+            <a href="/Employee/Index/"><i class="glyphicon glyphicon-tower"></i> &nbsp; Personeller </a>
+        }
+        <a href="/OnLoan/ToLend/"><i class="glyphicon glyphicon-arrow-down"></i> &nbsp; Ödünç Kitap Ver </a>
+        <a href="/OnLoan/Index/"><i class="glyphicon glyphicon-arrow-up"></i> &nbsp; Ödünç Kitap Al </a>
+        @if (User.IsInRole("A"))
+        {
+            <a href="/Operation/Index/"><i class="glyphicon glyphicon-dashboard"></i> &nbsp; İşlemler </a>
+        }
+        <a href="/Contact/Index"><i class="glyphicon glyphicon-envelope"></i> &nbsp; Mesajlar </a>
+        <a href="/Vitrin/Index"><i class="glyphicon glyphicon-gift"></i> &nbsp; Vitrin </a>
+        <a href="/AdminLogin/LogOut/"><i class="glyphicon glyphicon-remove-sign"></i> &nbsp; Çıkış </a>
+
+
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+

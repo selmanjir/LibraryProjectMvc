@@ -1,0 +1,76 @@
+﻿@model LibraryProjectMvc.Models.Entity.Users
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<body style="background-image:url(/web2/resimler/user.jpg);background-repeat:no-repeat;">
+</body>
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label style="color:white">Üye Adı</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.FirstName, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Üye Soyadı</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.LastName, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Mail Adresi</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.Mail, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Kullanıcı Adı</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.UserName, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Şifre</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.Password, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Fotoğraf Linki</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.Photo, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.Photo, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Telefon</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.Telephone, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.Telephone, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Okul</label>
+        <br />
+        @*<input type="text" class="form-control" name="EmployeeName" />*@
+        @Html.TextBoxFor(x => x.School, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.School, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">Öğrenim Durumu</label>
+        <br />
+        @Html.DropDownListFor(u => u.EducationStatusForNet, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(x => x.EducationStatusForNet, "", new { style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="Btn1">Üye Ekle</button>
+    </div>
+</form>
+

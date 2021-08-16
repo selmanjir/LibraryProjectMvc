@@ -1,0 +1,29 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Contacts>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Mesajlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Gönderici</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.Name</td>
+            <td>@a.Mail</td>
+            <td>@a.Subject</td>
+            <td><a href="/Contact/GetMessage/@a.ID" class="btn btn-default" style="background-color:#ea761f">Detay</a></td>
+
+        </tr>
+    }
+</table>

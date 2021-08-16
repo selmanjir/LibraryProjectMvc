@@ -1,0 +1,49 @@
+﻿@using LibraryProjectMvc.Models.Entity;
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Users>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color:white">Kullanıcılar</h2>
+<body style="background-color:#4f4e4e">
+</body>
+
+<table class="table table-bordered">
+    <tr>
+        <th style="color:white">ID</th>
+        <th style="color:white">ÜYE ADI</th>
+        <th style="color:white">ÜYE SOYADI</th>
+        <th style="color:white">MAİL</th>
+        <th style="color:white">KULLANICI ADI</th>
+        <th style="color:white">ŞİFRESİ</th>
+        <th style="color:white">TELEFON</th>
+        <th style="color:white">OKUL</th>
+        <th style="color:white">ÖĞRENİM DURUMU</th>
+        <th style="color:white"> SİL</th>
+        <th style="color:white">GÜNCELLE</th>
+    </tr>
+    @foreach (var users in Model)
+    {
+        <tr>
+            <td style="color:antiquewhite">@users.UserId</td>
+            <td style="color:antiquewhite">@users.FirstName</td>
+            <td style="color:antiquewhite">@users.LastName</td>
+            <td style="color:antiquewhite">@users.Mail</td>
+            <td style="color:antiquewhite">@users.UserName</td>
+            <td style="color:antiquewhite">@users.Password</td>
+            <td style="color:antiquewhite">@users.Telephone</td>
+            <td style="color:antiquewhite">@users.School</td>
+            <td style="color:antiquewhite">@users.EducationStatuses.EducationStatus</td>
+            <td style="color:antiquewhite"><a href="/User/DeleteUser/@users.UserId" class="btn btn-danger">Sil</a></td>
+            <td style="color:antiquewhite"><a href="/User/GetUser/@users.UserId" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+<a href="/User/AddUser/" class="btn btn-primary">Yeni Üye Ekle</a>

@@ -1,0 +1,34 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Actions>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ödünç Kitap Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem ID</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+        <th>İade Al</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.ActionId</td>
+            <td>@a.Books.BookName</td>
+            <td>@a.Users.FirstName&nbsp @a.Users.LastName</td>
+            <td>@a.Employees.EmployeeName</td>
+            <td>@Convert.ToDateTime(a.ReceiveDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(a.ReturnDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/OnLoan/LoanReturn/@a.ActionId" class="btn btn-default" style="background-color:chocolate;color:white" >Kitabı İade Et</a></td>
+
+        </tr>
+    }
+</table>
+

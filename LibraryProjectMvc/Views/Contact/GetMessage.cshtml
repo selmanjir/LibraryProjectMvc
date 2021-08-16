@@ -1,0 +1,19 @@
+﻿@model LibraryProjectMvc.Models.Entity.Contacts
+@{
+    ViewBag.Title = "GetMessage";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Mesaj İçeriği</h2>
+
+<label>Konu</label>
+<br />
+@Html.DisplayTextFor(c => c.Subject)
+<br />
+<br />
+
+
+<label class="panel-group">Mesaj</label>
+<br />
+
+<p class="">@Html.DisplayTextFor(c => c.Message)</p>

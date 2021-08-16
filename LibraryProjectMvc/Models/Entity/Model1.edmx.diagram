@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfc087081c4c45e68723c9d866d5df2c" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryProjectModel.Actions" Width="1.5" PointX="3.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Authors" Width="1.5" PointX="5.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Books" Width="1.5" PointX="0.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Categories" Width="1.5" PointX="3.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Employees" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Penalties" Width="1.5" PointX="6.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Safes" Width="1.5" PointX="9.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Users" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Actions_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Actions_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Actions_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Penalties_Actions" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Books_Authors" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Books_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Penalties_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Abouts" Width="1.5" PointX="10.875" PointY="2.5" />
+        <EntityTypeShape EntityType="LibraryProjectModel.Contacts" Width="1.5" PointX="9" PointY="2.5" />
+        <EntityTypeShape EntityType="LibraryProjectModel.EducationStatuses" Width="1.5" PointX="1.25" PointY="10.5" />
+        <AssociationConnector Association="LibraryProjectModel.FK_Users_EducationStatuses" />
+      </Diagram>
+      <Diagram DiagramId="62f8a1b26b6c46e1bfa499a82051c919" Name="Diagram2" >
+        <EntityTypeShape EntityType="LibraryProjectModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

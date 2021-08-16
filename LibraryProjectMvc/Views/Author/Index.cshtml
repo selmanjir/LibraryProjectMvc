@@ -1,0 +1,34 @@
+﻿@using LibraryProjectMvc.Models.Entity
+@model List<Authors>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2 style="color:white">Yazarlar</h2>
+<body style="background-color:#4f4e4e">
+</body>
+
+<table class="table table-bordered">
+    <tr>
+        <th style="color:white">ID</th>
+        <th style="color:white">ADI</th>
+        <th style="color:white">SOYADI</th>
+        <th style="color:white">DETAY</th>
+        <th style="color:white">SİL</th>
+        <th style="color:white">GÜNCELLE</th>
+    </tr>
+    @foreach (var authors in Model)
+    {
+        <tr>
+            <td style="color:antiquewhite">@authors.AuthorId</td>
+            <td style="color:antiquewhite">@authors.AuthorFirstName</td>
+            <td style="color:antiquewhite">@authors.AuthorLastName</td>
+            <td style="color:antiquewhite">@authors.Detail</td>
+            <td style="color:antiquewhite">@Html.ActionLink("Sil", "DeleteAuthor", new { id = authors.AuthorId }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz ? ')" }) </td>
+            <td style="color:antiquewhite"><a href="/Author/GetAuthor/@authors.AuthorId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Author/AddAuthor/" class="btn btn-primary">Yeni Yazar Ekle</a>

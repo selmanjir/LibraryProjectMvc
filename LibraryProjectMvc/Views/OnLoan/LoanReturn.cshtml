@@ -1,0 +1,39 @@
+﻿@model LibraryProjectMvc.Models.Entity.Actions
+@{
+    ViewBag.Title = "LoanReturn";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateOnLoan", "OnLoan", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Hareket ID</label>
+        @Html.TextBoxFor(a => a.ActionId, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(b => b.Books.BookName, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(u => u.Users.FirstName, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(e => e.Employees.EmployeeName, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(a => a.ReceiveDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Normal İade Tarihi</label>
+        @Html.TextBoxFor(a => a.ReturnDate, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" class="form-control" name="UserReturnDate" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Üyenin Geç Getirdiği Gün Sayısı</label>
+        <input type="text" class="form-control" id="LateDayinput" value="@ViewBag.dgr" />
+
+    </div>
+    <div>
+        <button class="btn btn-group" style="background-color: #169828;color: white">Ödünç Verilen Kitabı Geri Al</button>
+    </div>
+}

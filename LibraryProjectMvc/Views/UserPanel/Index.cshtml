@@ -1,0 +1,61 @@
+﻿@model LibraryProjectMvc.Models.Entity.Users
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUserPanel.cshtml";
+}
+
+<body style="background-image:url(/web2/resimler/user.jpg);background-repeat:no-repeat;">
+</body>
+@using (Html.BeginForm("Index2", "UserPanel", FormMethod.Post))
+{
+<table class="table table-borderless">
+
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Ad</label>
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Soyad</label>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Mail</label>
+            @Html.TextBoxFor(x => x.Mail, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Şifre</label>
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Telefon</label>
+            @Html.TextBoxFor(x => x.Telephone, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Okul</label>
+            @Html.TextBoxFor(x => x.School, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label style="font-weight:bolder;color:white"> Öğrenim Durumu</label>
+            @Html.DropDownListFor(u => u.EducationStatuses.EducationStatusId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-inline" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn btn-warning">Bilgileri Güncelle</button>
+        </td>
+    </tr>
+</table>
+}

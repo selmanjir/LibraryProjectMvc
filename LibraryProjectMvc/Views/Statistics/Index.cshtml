@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link href="~/web2/css/style.css" rel="stylesheet" />
+<link href="~/web2/css/jqvmap.css" rel="stylesheet" />
+<script src="~/web2/js/Chart1.js"></script>
+<script src="~/web2/js/jquery.min.js"></script>
+<script src="~/web2/js/jquery.vmap.js"></script>
+<script src="~/web2/js/jquery.vmap.sampledata.js"></script>
+<script src="~/web2/js/jquery.vmap.world.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('#vmap').vectorMap({
+            map: 'world_en',
+            backgroundColor: '#333333',
+            color: '#ffffff',
+            hoverOpacity: 0.7,
+            selectedColor: '#666666',
+            enableZoom: true,
+            showTooltip: true,
+            values: sample_data,
+            scaleColors: ['#C8EEFF', '#006491'],
+            normalizeFunction: 'polynomial'
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function (c) {
+        $('.alert-close6').on('click', function (c) {
+            $('.world-map').fadeOut('slow', function (c) {
+                $('.world-map').remove();
+            });
+        });
+    });
+</script>
+
+
+
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Esteem Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //custom-theme -->
+    <link href="~/web3/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/component.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/export.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/web3/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- font-awesome-icons -->
+    <link href="~/web3/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+    <!-- banner -->
+    <div class="clearfix"></div>
+
+    <ul class="ca-menu">
+        <li>    
+            <a href="#">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.dgr1</h4>
+                    <h3 class="ca-sub">Kitap Sayımız</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one">@ViewBag.dgr2</h4>
+                    <h3 class="ca-sub one">Üye Sayımız</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two">@ViewBag.dgr3</h4>
+                    <h3 class="ca-sub two">Kasadaki Tutar</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-send" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main three">@ViewBag.dgr4</h4>
+                    <h3 class="ca-sub three">Ödünçteki Kitaplar</h3>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+
+    <ul class="ca-menu">
+        <li>
+            <a href="#">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.dgr5</h4>
+                    <h3 class="ca-sub">Kategori Sayımız</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-language" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one">@ViewBag.dgr6</h4>
+                    <h3 class="ca-sub one">En Aktif Üye</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-database" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two">@ViewBag.dgr7</h4>
+                    <h3 class="ca-sub two">En Çok Okunan Kitap</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+                <div class="ca-content">
+
+                    <h4 class="ca-main three">@ViewBag.dgr8</h4>
+
+                    <h3 class="ca-sub three">En Fazla Kitabı Olan Yazar</h3>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul class="ca-menu">
+        <li>
+            <a href="#">
+                <i class="fa fa-barcode" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main">@ViewBag.dgr9</h4>
+                    <h3 class="ca-sub">En İyi yayınevi</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-bitcoin" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main one">Ezgi KERİMOĞLU</h4>
+                    <h3 class="ca-sub one">En Başarılı Personel</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-diamond" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main two">@ViewBag.dgr11</h4>
+                    <h3 class="ca-sub two">Toplam Mesaj Sayısı</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <div class="ca-content">
+                    <h4 class="ca-main three">@ViewBag.dgr12</h4>
+                    <h3 class="ca-sub three">Bügünkü Emanetler</h3>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <br />
+</body>
+</html>
+
+<div class="total-world">
+    <div class="world-map">
+        <div class="alert-close6"> </div>
+        <h3>Nüfusa Göre <br /> Okuryazarlık Yüzdesi</h3>
+        <p><span class="color1"></span>40%<span class="color2"></span>12%<span class="color3"></span>11%<span class="color4"></span>10%<span class="color5"></span>18%</p>
+        <div class="clearfix"></div>
+        <div id="vmap" style="width: 600px; height: 400px;"></div>
+    </div>
+    <div class="site-report">
+        <div class="alert-close3"> </div>
+        <h3>Sistem Raporları</h3>
+        <div class="skills-top">
+            <h5>Memnuniyet</h5>
+            <h4>89%</h4>
+            <div class="clearfix"></div>
+            <div class="skills">
+                <div class="skill" style="width:89%"></div>
+            </div>
+        </div>
+        <div class="skills-top">
+            <h5>Güvenilirlik</h5>
+            <h4>98%</h4>
+            <div class="clearfix"></div>
+            <div class="skills">
+                <div class="skill1" style="width:98%"></div>
+            </div>
+        </div>
+        <div class="skills-top">
+            <h5>Haftalık Geri Dönüş</h5>
+            <h4>65%</h4>
+            <div class="clearfix"></div>
+            <div class="skills">
+                <div class="skill2" style="width:65%"></div>
+            </div>
+        </div>
+        <p>Kütüphane Yönetim Sistemi admin paneli kısmındasınız. Kütüphane Sistemi size iyi okumalar diler. </p>
+    </div>
+    <div class="clearfix"></div>
+</div>

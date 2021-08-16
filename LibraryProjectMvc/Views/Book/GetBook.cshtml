@@ -1,0 +1,54 @@
+﻿@model LibraryProjectMvc.Models.Entity.Books
+@{
+    ViewBag.Title = "GetBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<body style="background-image:url(/web2/resimler/kitap_1500x800.jpg);background-repeat:no-repeat;">
+</body>
+
+@using (Html.BeginForm("UpdateBook", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Kitap ID &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(b => b.BookId, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Kitap ADI &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(b => b.BookName, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Kategori &nbsp;</label>
+            <br />
+            @Html.DropDownListFor(b => b.Categories.CategoryId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yazarı &nbsp;</label>
+            <br />
+            @Html.DropDownListFor(b => b.Authors.AuthorId, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white;">&nbsp; Basım Yılı &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(b => b.YearOfPublication, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Yayınevi &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(b => b.Publisher, new { @class = "form-inline" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label style="color:white">&nbsp; Sayfa Sayısı &nbsp;</label>
+            <br />
+            @Html.TextBoxFor(b => b.Page, new { @class = "form-inline" })
+        </div>
+        <button class="btn btn-primary">Kitap Bilgilerini Güncelle</button>
+
+    </div>
+
+}
+

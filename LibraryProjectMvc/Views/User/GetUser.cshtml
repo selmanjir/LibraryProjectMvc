@@ -1,0 +1,60 @@
+﻿@model LibraryProjectMvc.Models.Entity.Users
+@{
+    ViewBag.Title = "GetUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+
+}
+<body style="background-image:url(/web2/resimler/user.jpg);background-repeat:no-repeat;">
+</body>
+@using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label style="color:white">Üye ID</label>
+        <br />
+        @Html.TextBoxFor(u => u.UserId, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">ÜYE Adı</label>
+        <br />
+        @Html.TextBoxFor(u => u.FirstName, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">ÜYE Soyadı</label>
+        <br />
+        @Html.TextBoxFor(u => u.LastName, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Kullanıcı Adı</label>
+        <br />
+        @Html.TextBoxFor(u => u.UserName, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Şifre</label>
+        <br />
+        @Html.TextBoxFor(u => u.Password, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Mail</label>
+        <br />
+        @Html.TextBoxFor(u => u.Mail, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Okulu</label>
+        <br />
+        @Html.TextBoxFor(u => u.School, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Öğrenim Durumu</label>
+        <br />
+        @Html.DropDownListFor(u => u.EducationStatuses.EducationStatusId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Telefon</label>
+        <br />
+        @Html.TextBoxFor(u => u.Telephone, new { @class = "form-inline" })
+        <br />
+        <label style="color:white">Fotoğraf Linki</label>
+        <br />
+        @Html.TextBoxFor(u => u.Photo, new { @class = "form-inline" })
+        <br />
+
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

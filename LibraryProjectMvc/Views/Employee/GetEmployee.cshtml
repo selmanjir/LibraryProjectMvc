@@ -1,0 +1,26 @@
+﻿@model LibraryProjectMvc.Models.Entity.Employees
+@{
+    ViewBag.Title = "GetEmployee";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<body style="background-image:url(/web2/resimler/eTgd2o2.jpg);background-repeat:no-repeat;">
+</body>
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @*Html.LabelFor(e => e.EmployeeId)*@
+        <label style="color:white">PERSONEL ID</label>
+        <br />
+        @Html.TextBoxFor(e => e.EmployeeId, new { @class = "form-inline" })
+        <br />
+        @*Html.LabelFor(e => e.EmployeeName) *@
+        <label style="color:white">PERSONEL ADI</label>
+        <br />
+        @Html.TextBoxFor(e => e.EmployeeName, new { @class = "form-inline" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

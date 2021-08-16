@@ -1,0 +1,45 @@
+﻿@model LibraryProjectMvc.Models.Entity.Books
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<body style="background-image:url(/web2/resimler/kitap1_1500x650.jpg);background-repeat:no-repeat;">
+</body>
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top: 15px">
+        <label style="color:white">&nbsp; Kitap Adı &nbsp;</label>
+        <br />
+        @Html.TextBoxFor(b => b.BookName, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Kitap Kategorisi &nbsp;</label>
+        <br />
+        @Html.DropDownListFor(b => b.CategoryForNet, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Kitap Yazarı &nbsp;</label>
+        <br />
+        @Html.DropDownListFor(b => b.AuthorForNet, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Basım Yılı &nbsp;</label>
+        <br />
+        @Html.TextBoxFor(b => b.YearOfPublication, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Yayınevi &nbsp;</label>
+        <br />
+        @Html.TextBoxFor(b => b.Publisher, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Sayfa Sayısı &nbsp;</label>
+        <br />
+        @Html.TextBoxFor(b => b.Page, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <br />
+        <button class="btn btn-primary">Yeni Kitap Ekle</button>
+    </div>
+    <input type="hidden" name="BookStatus" value="true" />
+</form>

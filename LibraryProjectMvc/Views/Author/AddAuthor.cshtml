@@ -1,0 +1,31 @@
+﻿@model LibraryProjectMvc.Models.Entity.Authors
+@{
+    ViewBag.Title = "AddAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<body style="background-image:url(/web2/resimler/booknew_1400x650.jpg);background-repeat:no-repeat">
+</body>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top: 15px">
+        <label style="color:white">&nbsp; Yazar Adı&nbsp;</label>
+        <br />
+        @Html.TextBoxFor(a => a.AuthorFirstName, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(a => a.AuthorFirstName)
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Yazar Soyadı &nbsp;</label>
+        <br />
+        @Html.TextBoxFor(a => a.AuthorLastName, new { @class = "form-inline" })
+        @Html.ValidationMessageFor(a => a.AuthorLastName)
+    </div>
+    <div style="margin-top:15px">
+        <label style="color:white">&nbsp; Yazar Detayı &nbsp;</label>
+        <br />
+        @Html.TextAreaFor(a => a.Detail, new { @class = "form-inline" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+</form>
